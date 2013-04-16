@@ -30,3 +30,4 @@ function get_longest_chain() {
   }
   return highestNumber;
 }
+
