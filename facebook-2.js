@@ -1,3 +1,5 @@
+// Find all permutations of a string
+
 var result = [];
 
 function permutate(string, index) {
