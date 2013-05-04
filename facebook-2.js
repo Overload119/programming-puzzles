@@ -2,7 +2,7 @@ var result = [];
 
 function permutate(string, index) {
   if(index === string.length - 1) {
-    result.push(newString);
+    result.push(string);
   } else {
     permutate(string, index + 1);
 
