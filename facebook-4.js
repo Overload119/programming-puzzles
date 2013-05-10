@@ -1,11 +1,23 @@
-// Implement a square root function without the use of Math.sqrt
+// Implement a integer square root function without the use of Math.sqrt
 
 function sqrt(num) {
   if (num < 0) {
+    throw new Exception("Nope");
+  } else if (num === 1) {
+    return 1;
   }
   var guessLow = 0;
-  while( guessLow < guessHigh ) {
-    var guessMiddle = (guessHigh + guessLow) / 2
-    if( guessLow
+  var guessHigh = Math.floor(1 + (num/2));
+  while (guessLow < guessHigh) {
+    var guessMiddle = Math.floor(guessLow + ((guessHigh + guessLow) / 2));
+    var square = guessMiddle * guessMiddle;
+    if (square == num) {
+      return guessMiddle;
+    } else if (square < num) {
+      guessLow = guessMiddle;
+    } else {
+      guessHigh = guessMiddle;
+    }
   }
+  return guessLow;
 }
