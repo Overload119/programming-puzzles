@@ -1,0 +1,18 @@
+function longestArithmeticSequence(array) {
+  var longestSequence = 0;
+  var sequence = 1;
+  var currentDifference = array[1] - array[0];
+  for (var i = 1; i < array.length - 1; i++) {
+    var diff = array[i + 1] - array[i];
+    if (currentDifference === diff) {
+      sequence++;
+    } else {
+      if (sequence > longestSequence) {
+        longestSequence = sequence;
+      }
+      currentDifference = diff;
+      sequence = 1;
+    }
+  }
+  return longestSequence + 1;
+}
